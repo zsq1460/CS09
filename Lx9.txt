@@ -1,0 +1,71 @@
+﻿C#企业级开发技术练习9答题卡
+
+班级： 19信管1班    
+姓名：  张舒倩   
+学号： 20190307137    
+
+注：请将答案放置在序号下方。*/
+
+（一）using System;
+using System.Collections.Generic;
+namespace ConsoleApp9
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<int, string> courses = new Dictionary<int, string>()
+            {
+                [5331034] = "javascript",
+                [5331095] = "linux",
+                [5331019] = "PHP",
+            };
+            int id = 5331034; string s = $"键{id}";
+            if (!courses.ContainsKey(id))
+                Console.WriteLine("${s}不存在，下面添加");
+            else
+            {
+                Console.WriteLine("${s}对应的值为{courses[id]}，下面修改");
+            }
+            courses[id] = "html5";
+            Console.WriteLine("结果如下：");
+            foreach (var c in courses)
+            {
+                Console.WriteLine($"键:{c.Key},值:{c.Value}");
+            }
+        }
+    }
+}
+
+
+（二）
+
+ class Numstring
+    {
+        string  num = "123";
+        public char this[int i]
+        {
+            set
+            {
+                num = num.PadRight(i+1, '0');
+                num = num.Insert(i, value.ToString());
+                num = num.Remove(i + 1, 1);
+            }
+        }
+        public void outAll() => Console.WriteLine(num);
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+                Numstring ns = new Numstring();
+                ns[5] = '2';
+                ns[2] = '5';
+                ns.outAll();
+            }
+        }
+    }
+}
+
+
